@@ -28,7 +28,7 @@
                 <span class="loading loading-bars loading-lg"></span>
             </div>
 
-            
+
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             </div>
 
@@ -40,17 +40,22 @@
         </section>
         <!-- Show Details modal -->
         <!-- Open the modal using ID.showModal() method -->
-        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
-            <form method="dialog" class="modal-box">
-                <h3 id="show-detail-phone-name" class="font-bold text-3xl"></h3>
-                <div id="show-detail-container">
 
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="show_image">
+                
                 </div>
+                <h3 id="show_details_name" class="font-bold text-lg">Hello!</h3>
+                <p  class="py-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <p id="show_details_stroge" class="py-4">hellow</p>
                 <div class="modal-action">
-               
-                    <button class="btn">Close</button>
+                    <form method="dialog">
+                   
+                        <button class="btn">Contin</button>
+                    </form>
                 </div>
-            </form>
+            </div>
         </dialog>
 
     </main>

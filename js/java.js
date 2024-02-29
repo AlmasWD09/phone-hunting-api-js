@@ -31,7 +31,7 @@ const displayPnones = (phones,isShowAll) =>{
     <h2 class="text-2xl font-bold">${item?.phone_name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions">
-      <button class="btn btn-primary w-full">Buy Now</button>
+      <button onclick="showDetailsButton('${item?.slug}')"  class="btn btn-primary w-full">Buy Now</button>
     </div>
 </div>
   `
@@ -63,6 +63,26 @@ const handleShowAll = () =>{
   handleSearch(true)
 }
 
+// show details button
+const showDetailsButton = async(id) =>{
+  const url = `https://openapi.programming-hero.com/api/phone/${id}`
+  const res = await fetch(url)
+  const data2 = await res.json()
+  const phone2 = data2.data;
+  showdetailsModal(phone2)
+}
 
 
-loadPhone();
+// show detaisl modal
+const showdetailsModal = (phone) =>{
+const showImage = document.getElementById('show_image');
+showImage.innerHTML = `<img src="${phone.image}" alt="">`
+const showDetailsName = document.getElementById('show_details_name');
+showDetailsName.innerText = phone?.name
+const showDetailsStroge = document.getElementById('show_details_stroge');
+showDetailsStroge.innerText = phone?.mainFeatures.storage
+  show_details_modal.showModal()
+}
+
+
+loadPhone('13');
